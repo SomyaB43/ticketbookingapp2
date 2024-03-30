@@ -25,7 +25,7 @@ public class BookingController {
      * Displays the main menu options to the user.
      * 
      */
-    @GetMapping("/")
+    @GetMapping("/index")
     public void displayMainMenu() {
     }
 
