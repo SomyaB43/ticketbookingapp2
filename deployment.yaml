@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: booking-deployment
+spec:
+  strategy:
+      type: Recreate
+  replicas: 1
+  selector:
+    matchLabels:
+      app: booking-deployment
+  template:
+    metadata:
+      labels:
+        app: booking-deployment
+    spec:
+      containers:
+      - name: binarycalculator
+        image: gcr.io/ticketbookingapp/booking-deployment:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
