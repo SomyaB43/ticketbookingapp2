@@ -60,3 +60,4 @@ public class APIControllerTest {
                .andExpect(status().isOk());
         // Further assertions can be made based on the expected JSON response
     }
+}
