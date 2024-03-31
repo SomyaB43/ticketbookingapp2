@@ -62,5 +62,32 @@
 
         <h2 class="title-subheading">Couldn't find your flight? <a href="index.html">Search again</a></h2>
     </div>
+    <script>
+    function handleSubmit(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    // Get the selected radio button
+    const selectedFlight = document.querySelector('input[name="selected_flight"]:checked');
+
+    // Check if a flight is selected
+    if (selectedFlight) {
+        // Get the flight title
+        const flightTitle = selectedFlight.value;
+
+        // Get the flight details container
+        const flightDetailsContainer = selectedFlight.closest('.flight-listing').querySelector('.flight-details');
+
+        // Extract specific details
+        const departure = flightDetailsContainer.querySelector('.departure').textContent;
+        const destination = flightDetailsContainer.querySelector('.destination').textContent;
+        const departureTime = flightDetailsContainer.querySelector('.departure-time').textContent;
+        const arrivalTime = flightDetailsContainer.querySelector('.arrival-time').textContent;
+        const price = flightDetailsContainer.querySelector('.price').textContent;
+    } else {
+        // No flight selected
+        console.error("Please select a flight.");
+    }
+}
+</script>
 </body>
 </html>
