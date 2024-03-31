@@ -61,7 +61,7 @@ spec:
                     container('gcloud') {
                         // Now GOOGLE_APPLICATION_CREDENTIALS will have the path to the secret file
                         sh "gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}"
-                        sh "gcloud builds submit --tag ${IMAGE_TAG} ./"
+                        sh "gcloud builds submit --tag ${IMAGE_TAG} ./jenkins/"
                     }
                 }
             }
