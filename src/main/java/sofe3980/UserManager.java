@@ -6,15 +6,15 @@ import java.util.Optional;
 public class UserManager {
 
     private List<User> users;
-    private int nextUserId; // To keep track of the next available user ID
+    private long nextUserId; // Use long type for userId
 
     public UserManager() {
         this.users = new ArrayList<>();
-        this.nextUserId = 1; // Start with user ID 1
+        this.nextUserId = 1L; // Start with user ID 1
     }
 
     public User registerUser(String name, String email, String password, LocalDate dob, String passportNumber) {
-        int userId = nextUserId++; // Assign the current value of nextUserId and then increment it
+        long userId = nextUserId++; // Assign the current value of nextUserId and then increment it
         User newUser = new User(userId, name, email, password, dob, passportNumber);
         users.add(newUser);
         return newUser;
