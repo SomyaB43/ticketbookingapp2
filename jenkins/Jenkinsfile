@@ -45,11 +45,11 @@ spec:
                 sh 'echo "Start of Job"'
             }
         }
-        /* stage ('test') {
+         stage ('test') {
             steps {
                 sh 'mvn clean test -f ./pom.xml'
             }
-        } */
+        } 
         stage ('build') {
             steps {
                 sh 'mvn package -DskipTests -f ./pom.xml'
