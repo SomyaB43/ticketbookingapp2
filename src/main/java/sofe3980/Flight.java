@@ -1,6 +1,8 @@
 package sofe3980;
 
 import java.time.LocalDateTime;
+import java.time.Duration;
+
 
 public class Flight {
 
@@ -29,7 +31,14 @@ public class Flight {
      *         already part of the Flight class.
      */
     public String calculateDuration() {
-        return null;
+    
+    Duration duration = Duration.between(departureTime, arrivalTime);
+        
+    long hours = duration.toHours();
+    long minutes = duration.toMinutes() % 60;
+
+    return hours + " hours " + minutes + " minutes";
+        
     }
 
     // Getters
