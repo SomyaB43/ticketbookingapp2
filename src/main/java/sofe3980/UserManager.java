@@ -12,13 +12,14 @@ public class UserManager {
 
     public UserManager() {
         this.users = new ArrayList<>();
-        this.nextUserId = 1; // Start with user ID 1
+        this.nextUserId = 1; // Start with user ID 1 then increment from here
     }
 
     public User registerUser(String name, String email, String password, LocalDate dob, String passportNumber) {
-        int userId = nextUserId++; // Assign the current value of nextUserId and then increment it
+        int userId = nextUserId++; // auto increment ID value
         User newUser = new User(userId, name, email, password, dob, passportNumber);
-        users.add(newUser);
+        users.add(newUser); // store in a list for now, this would be a database if we were using persistent
+                            // storage in this app
         return newUser;
     }
 

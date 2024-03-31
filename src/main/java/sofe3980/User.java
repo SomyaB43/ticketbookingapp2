@@ -28,7 +28,7 @@ public class User {
 
     // Getters
 
-    public long getUserId() {
+    public int getUserId() {
         return userId;
     }
 
