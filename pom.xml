@@ -83,7 +83,7 @@
 				<executions>
 					<execution>
 						<configuration>
-							<mainClass>sofe3980U.Application</mainClass>
+							<mainClass>sofe3980U.App</mainClass>
 						</configuration>
 					</execution>
 				</executions>
