@@ -3,7 +3,6 @@ package sofe3980;
 import java.time.LocalDateTime;
 import java.time.Duration;
 
-
 public class Flight {
 
     private int flightId;
@@ -25,20 +24,16 @@ public class Flight {
     }
 
     /**
-     * Calculates and returns the duration of the flight.
+     * Calculates and returns the duration of the flight in the format "H:MM".
      * 
-     * @return The duration of the flight as a string, uses the attributes that are
-     *         already part of the Flight class.
+     * @return The duration of the flight as a string formatted as "H:MM".
      */
     public String calculateDuration() {
-    
-    Duration duration = Duration.between(departureTime, arrivalTime);
-        
-    long hours = duration.toHours();
-    long minutes = duration.toMinutes() % 60;
+        long minutes = Duration.between(departureTime, arrivalTime).toMinutes();
+        long hours = minutes / 60;
+        long remainingMinutes = minutes % 60;
 
-    return hours + " hours " + minutes + " minutes";
-        
+        return String.format("%d:%02d", hours, remainingMinutes);
     }
 
     // Getters

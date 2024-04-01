@@ -33,20 +33,41 @@ public class UserManagerTest {
 
     @Test
     public void testLoginUserSuccessful() {
-        String email = "janedoe@example.com";
+        // Register a user
+        String name = "John Doe";
+        String email = "johndoe@example.com";
         String password = "password";
+        LocalDate dob = LocalDate.now();
+        String passportNumber = "AA123456789";
+        User user = userManager.registerUser(name, email, password, dob, passportNumber);
 
+        // System.out.println(user.toString());
+    
+        // Attempt to log in
         Optional<User> result = userManager.loginUser(email, password);
         assertTrue("User should be able to log in successfully", result.isPresent());
         assertEquals("Logged in user should have the correct email", email, result.get().getEmail());
     }
+    
 
     @Test
     public void testLoginUserUnsuccessful() {
-        String email = "something@example.com";
-        String password = "password123";
+        // Register a user
+        String name = "John Doe";
+        String email = "johndoe@example.com";
+        String password = "password";
+        LocalDate dob = LocalDate.now();
+        String passportNumber = "AA123456789";
+        User user = userManager.registerUser(name, email, password, dob, passportNumber);
 
-        Optional<User> result = userManager.loginUser(email, password);
-        assertFalse("User should not be able to log in with incorrect email", result.isPresent());
+        // System.out.println(user.toString()); 
+
+        // attempt login with wrong email, but correct password
+        Optional<User> result1 = userManager.loginUser("wrongemail@email.com", password);
+        assertFalse("User should not be able to log in with incorrect email", result1.isPresent());
+
+        // attempt login with correct email, but wrong password
+        Optional<User> result2 = userManager.loginUser(email, "wrongpassword");
+        assertFalse("User should not be able to log in with incorrect password", result2.isPresent());
     }
 }
