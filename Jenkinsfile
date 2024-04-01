@@ -1,11 +1,11 @@
 pipeline {
   environment {
-    PROJECT = "useful-variety-415821"
-    APP_NAME = "booking-deployment"
-    CLUSTER = "sofe3980u"
-    CLUSTER_ZONE = "northamerica-northeast1-b"
-    IMAGE_TAG = "gcr.io/${PROJECT}/${APP_NAME}"
-    JENKINS_CRED = "6997199e-9a41-4f9a-bc2c-efe74d4446f3"
+   PROJECT = "my-project-43-415818"
+        APP_NAME = "binarycalculator-deployment"
+        CLUSTER = "sofe3980u"
+        CLUSTER_ZONE = "northamerica-northeast1-b"
+        IMAGE_TAG = "gcr.io/${PROJECT}/${APP_NAME}"
+        JENKINS_CRED = "caf8edfd1f934022a6b9b079fef32e8534c7ec98"
   }
   
 agent {
