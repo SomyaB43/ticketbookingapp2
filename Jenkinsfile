@@ -1,6 +1,6 @@
 pipeline {
   environment {
-	PROJECT = "useful-variety-415821"
+    PROJECT = "useful-variety-415821"
     APP_NAME = "booking-deployment"
     CLUSTER = "sofe3980u"
     CLUSTER_ZONE = "northamerica-northeast1-b"
