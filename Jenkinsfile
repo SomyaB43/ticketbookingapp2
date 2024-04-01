@@ -57,7 +57,7 @@ spec:
         }
         stage('Build and push image with Container Builder') {
             steps {
-                withCredentials([file(credentialsId: "new", variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
+                withCredentials([file(credentialsId: "Jenkins-Credential", variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
                     container('gcloud') {
                         // Now GOOGLE_APPLICATION_CREDENTIALS will have the path to the secret file
                         sh "gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}"
