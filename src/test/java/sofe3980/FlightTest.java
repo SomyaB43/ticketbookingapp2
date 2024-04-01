@@ -21,9 +21,6 @@ public class FlightTest {
 
         String expectedDuration = String.format("%d:%02d", hours, minutes);
 
-        System.out.println(expectedDuration);
-
-        // Call calculateDuration and check the result, they should match if the test is successful
         String calculatedDuration = flight.calculateDuration();
         assertEquals("Duration should be correctly calculated", expectedDuration, calculatedDuration);
     }
